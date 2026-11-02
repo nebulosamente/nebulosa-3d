@@ -22,8 +22,8 @@
 .ceu-page .h2{ margin: 0; font-family: var(--serif); font-weight: 400; font-size: clamp(54px, 7vw, 120px); line-height: 0.92; letter-spacing: -0.025em; text-wrap: balance; }
 .ceu-page .lede{ margin: 0; font-family: var(--serif); font-style: italic; font-size: clamp(21px, 1.8vw, 28px); line-height: 1.2; text-wrap: pretty; }
 /* palavras preenchidas com musgo de verdade */
-.ceu-page .mossy{ font-style: italic; padding-right: 0.07em; color: #4d6b36; background: linear-gradient(180deg, rgba(36,58,26,0.1), rgba(36,58,26,0.42)), url(../../assets/ceu/textura-musgo.webp) 30% 40% / 460px auto; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-.ceu-page .mossy-lt{ background: linear-gradient(180deg, rgba(238,242,238,0.5), rgba(238,242,238,0.2)), url(../../assets/ceu/textura-musgo.webp) 60% 20% / 460px auto; -webkit-background-clip: text; background-clip: text; }
+.ceu-page .mossy{ font-style: italic; padding-right: 0.07em; color: #4d6b36; background: linear-gradient(180deg, rgba(36,58,26,0.1), rgba(36,58,26,0.42)), url(../assets/ceu/textura-musgo.webp) 30% 40% / 460px auto; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+.ceu-page .mossy-lt{ background: linear-gradient(180deg, rgba(238,242,238,0.5), rgba(238,242,238,0.2)), url(../assets/ceu/textura-musgo.webp) 60% 20% / 460px auto; -webkit-background-clip: text; background-clip: text; }
 
 /* ---------- vidro líquido ---------- */
 .ceu-page .lg{
@@ -172,7 +172,7 @@
 .ceu-page .mani-meta{ position: relative; z-index: 6; display: flex; justify-content: space-between; gap: 12px; margin-bottom: 36px; color: var(--moss); }
 
 /* ---------- ficha ---------- */
-.ceu-page .ficha{ position: relative; z-index: 3; padding: 260px 4vw 0; color: #fff; overflow: hidden; background: linear-gradient(180deg, rgba(34,48,28,0.84), rgba(20,30,16,0.96)), url(../../assets/ceu/textura-musgo.webp) 50% 0 / 560px auto; }
+.ceu-page .ficha{ position: relative; z-index: 3; padding: 260px 4vw 0; color: #fff; overflow: hidden; background: linear-gradient(180deg, rgba(34,48,28,0.84), rgba(20,30,16,0.96)), url(../assets/ceu/textura-musgo.webp) 50% 0 / 560px auto; }
 .ceu-page .ficha::before{ content: ''; position: absolute; z-index: 1; left: 0; right: 0; top: 0; height: 260px; background: linear-gradient(180deg, #eef2ee 0%, rgba(238,242,238,0.8) 30%, rgba(238,242,238,0) 100%); pointer-events: none; }
 .ceu-page .ficha-head{ position: relative; z-index: 3; display: flex; flex-direction: column; gap: 24px; max-width: min(100%, 700px); }
 .ceu-page .ficha-head .meta{ color: #cfe0b4; }

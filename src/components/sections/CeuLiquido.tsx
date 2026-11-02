@@ -9,7 +9,7 @@ import { CeuGiro } from './CeuGiro'
 import { CeuLightbox } from './CeuLightbox'
 import { CeuUniverso } from './CeuUniverso'
 import { CeuVistas } from './CeuVistas'
-import './ceu.css'
+import '../../styles/ceu.css'
 
 type CeuLiquidoProps = {
   onNavigate: Navigate
