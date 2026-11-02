@@ -1,8 +1,11 @@
-import { useCallback, useEffect, useRef, useState, type PointerEvent } from 'react'
+import { useCallback, useRef, useState, type PointerEvent } from 'react'
 import type { PieceId } from '../../data/ceu/types'
 import { CEU_GALLERY, CEU_SLIDES } from '../../data/ceu/slides'
+import { useBodyScrollLock } from '../../hooks/useBodyScrollLock'
+import { useCarouselAutoplay } from '../../hooks/useCarouselAutoplay'
 import { useCeuScroll } from '../../hooks/useCeuScroll'
-import { AUTOPLAY_MS, DRAG_PX } from '../../lib/carousel'
+import { useGlassWarp } from '../../hooks/useGlassWarp'
+import { DRAG_PX } from '../../lib/carousel'
 import type { Navigate } from '../../lib/links'
 import { ProjectNav } from '../layout/ProjectNav'
 import { CeuAbertura } from './CeuAbertura'
@@ -35,36 +38,9 @@ export function CeuLiquido({ onNavigate }: CeuLiquidoProps) {
 
   useCeuScroll(rootRef, setIndex, slides.length)
 
-  useEffect(() => {
-    const root = rootRef.current
-    if (!root) return
-    // O deslocamento SVG do vidro só é estável no Chrome.
-    try {
-      if (CSS.supports('backdrop-filter', 'url(#lg-warp) blur(2px)') && /Chrome\//.test(navigator.userAgent)) {
-        root.classList.add('lg-warp')
-      }
-    } catch {
-      /* o vidro fosco comum continua valendo */
-    }
-  }, [])
-
-  useEffect(() => {
-    if (!playing) return
-    const timer = window.setInterval(() => {
-      if (dragging.current) return
-      setIndex((current) => (current + 1) % CEU_SLIDES[piece].length)
-    }, AUTOPLAY_MS)
-    return () => window.clearInterval(timer)
-  }, [piece, playing])
-
-  useEffect(() => {
-    if (lightbox < 0) return
-    const previous = document.body.style.overflow
-    document.body.style.overflow = 'hidden'
-    return () => {
-      document.body.style.overflow = previous
-    }
-  }, [lightbox])
+  useGlassWarp(rootRef)
+  useCarouselAutoplay(playing, piece, dragging, setIndex)
+  useBodyScrollLock(lightbox >= 0)
 
   const step = (delta: number) => {
     setIndex((current) => (current + delta + slides.length) % slides.length)
