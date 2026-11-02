@@ -1,4 +1,4 @@
-import type { CeuDecor } from '../../data/ceuPage'
+import type { CeuDecor } from '../../data/ceu/types'
 
 export function CeuLayer({ layer, loading }: { layer: CeuDecor; loading?: 'eager' | 'lazy' }) {
   return (

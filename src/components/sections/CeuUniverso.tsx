@@ -1,5 +1,7 @@
 import type { CSSProperties } from 'react'
-import { CEU_EMPHASIS, CEU_FOG, CEU_PAGE, CEU_STORY, CEU_UNIVERSE } from '../../data/ceuPage'
+import { CEU_FOG } from '../../data/ceu/assets'
+import { CEU_UNIVERSE } from '../../data/ceu/layers'
+import { CEU_EMPHASIS, CEU_PAGE, CEU_STORY } from '../../data/ceu/copy'
 import { CeuLayer } from './CeuLayer'
 
 /** Palavras a mais no fim, para a última acender antes de sair da dobra. */

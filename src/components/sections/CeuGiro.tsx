@@ -1,5 +1,10 @@
 import type { PointerEvent } from 'react'
-import { CEU_GIRO_LAYERS, CEU_LILIES, CEU_PAGE, CEU_SLIDES, pad, type PieceId } from '../../data/ceuPage'
+import type { PieceId } from '../../data/ceu/types'
+import { CEU_LILIES } from '../../data/ceu/assets'
+import { CEU_GIRO_LAYERS } from '../../data/ceu/layers'
+import { CEU_SLIDES } from '../../data/ceu/slides'
+import { CEU_PAGE } from '../../data/ceu/copy'
+import { pad } from '../../lib/format'
 import { slidePose } from '../../hooks/useCeuScroll'
 import { CeuLayer } from './CeuLayer'
 

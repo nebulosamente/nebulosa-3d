@@ -1,5 +1,8 @@
 import { useRef } from 'react'
-import { CEU_GALLERY, CEU_PAGE, CEU_VISTAS_BACK, CEU_VISTAS_FRONT, pad } from '../../data/ceuPage'
+import { CEU_VISTAS_BACK, CEU_VISTAS_FRONT } from '../../data/ceu/layers'
+import { CEU_GALLERY } from '../../data/ceu/slides'
+import { CEU_PAGE } from '../../data/ceu/copy'
+import { pad } from '../../lib/format'
 import { CeuLayer } from './CeuLayer'
 
 /** Fração da largura visível que os botões da trilha avançam. */

@@ -1,5 +1,7 @@
 import { useEffect, useRef } from 'react'
-import { CEU_GALLERY, CEU_PAGE, pad } from '../../data/ceuPage'
+import { CEU_GALLERY } from '../../data/ceu/slides'
+import { CEU_PAGE } from '../../data/ceu/copy'
+import { pad } from '../../lib/format'
 
 type CeuLightboxProps = {
   index: number

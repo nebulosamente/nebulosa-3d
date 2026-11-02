@@ -1,4 +1,6 @@
-import { CEU_FICHA_CLOUD, CEU_GARDEN_DROP, CEU_LILIES, CEU_MOUND, CEU_PAGE, CEU_PANSY, CEU_TILES } from '../../data/ceuPage'
+import { CEU_LILIES, CEU_MOUND, CEU_PANSY } from '../../data/ceu/assets'
+import { CEU_FICHA_CLOUD, CEU_GARDEN_DROP } from '../../data/ceu/layers'
+import { CEU_PAGE, CEU_TILES } from '../../data/ceu/copy'
 import { isPlainLeftClick, siteUrl } from '../../lib/links'
 import { CeuLayer } from './CeuLayer'
 

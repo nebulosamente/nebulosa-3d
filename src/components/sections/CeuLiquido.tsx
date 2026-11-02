@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState, type PointerEvent } from 'react'
-import { CEU_GALLERY, CEU_SLIDES, type PieceId } from '../../data/ceuPage'
+import type { PieceId } from '../../data/ceu/types'
+import { CEU_GALLERY, CEU_SLIDES } from '../../data/ceu/slides'
 import { AUTOPLAY_MS, DRAG_PX, useCeuScroll } from '../../hooks/useCeuScroll'
 import type { Navigate } from '../../lib/links'
 import { ProjectNav } from '../layout/ProjectNav'
