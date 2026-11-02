@@ -22,6 +22,29 @@ npm run lint
 
 As portas são diferentes em cada um dos três repositórios para dar para rodar todos ao mesmo tempo.
 
+## Estrutura do código
+
+```
+src/
+  main.tsx, App.tsx     entrada e escolha da página
+  components/
+    layout/             ProjectNav (barra fixa entre os projetos)
+    sections/           CeuLiquido (página) e as seções: Abertura, Giro, Vistas, Universo, Ficha, Lightbox, Layer
+  data/
+    ceu/                conteúdo separado dos componentes:
+                          types (tipos), assets (imagens), layers (camadas decorativas),
+                          slides (peças e galeria), copy (textos)
+    projectNav.ts       itens da barra de projetos
+  hooks/                useCeuScroll (parallax, reveal, giro por rolagem), useCarouselAutoplay,
+                        useGlassWarp, useBodyScrollLock, useHideOnScroll, useMobileReveal, mobile
+  lib/                  carousel (pose e constantes do giro), format, links (URLs entre os sites)
+  styles/               index.css, mobile.css, ceu.css
+  assets/ceu/           imagens usadas pelo Céu Líquido
+```
+
+As imagens são carregadas por `import.meta.glob` em `src/data/ceu/assets.ts` e pedidas pelo nome do arquivo
+(`ceuAsset('ambiente/lirios.webp')`); um nome que não existe quebra o build/carregamento com erro explícito.
+
 ## Links entre os sites
 
 Os links para a home e para os outros dois sites são URLs completas, definidas em `src/lib/links.ts`.

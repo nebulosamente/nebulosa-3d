@@ -1,4 +1,6 @@
-import { CEU_HERO_BACK, CEU_HERO_BG, CEU_HERO_FRONT, CEU_PAGE } from '../../data/ceuPage'
+import { CEU_HERO_BG } from '../../data/ceu/assets'
+import { CEU_HERO_BACK, CEU_HERO_FRONT } from '../../data/ceu/layers'
+import { CEU_PAGE } from '../../data/ceu/copy'
 import { CeuLayer } from './CeuLayer'
 
 function setPointer(section: HTMLElement, x: number, y: number) {
