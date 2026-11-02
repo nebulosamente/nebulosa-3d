@@ -96,7 +96,7 @@ export function CeuLiquido({ onNavigate }: CeuLiquidoProps) {
           <feDisplacementMap in="SourceGraphic" in2="n" scale="22" xChannelSelector="R" yChannelSelector="G" />
         </filter>
       </svg>
-      <ProjectNav current="3d" tone="botanical" onNavigate={onNavigate} />
+      <ProjectNav current="3d" onNavigate={onNavigate} />
       <main>
         <CeuAbertura />
         <CeuGiro
