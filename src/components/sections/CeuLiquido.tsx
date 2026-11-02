@@ -6,8 +6,6 @@ import { useCarouselAutoplay } from '../../hooks/useCarouselAutoplay'
 import { useCeuScroll } from '../../hooks/useCeuScroll'
 import { useGlassWarp } from '../../hooks/useGlassWarp'
 import { DRAG_PX } from '../../lib/carousel'
-import type { Navigate } from '../../lib/links'
-import { ProjectNav } from '../layout/ProjectNav'
 import { CeuAbertura } from './CeuAbertura'
 import { CeuFicha } from './CeuFicha'
 import { CeuGiro } from './CeuGiro'
@@ -16,11 +14,7 @@ import { CeuUniverso } from './CeuUniverso'
 import { CeuVistas } from './CeuVistas'
 import '../../styles/ceu.css'
 
-type CeuLiquidoProps = {
-  onNavigate: Navigate
-}
-
-export function CeuLiquido({ onNavigate }: CeuLiquidoProps) {
+export function CeuLiquido() {
   const rootRef = useRef<HTMLDivElement>(null)
   const dragging = useRef(false)
   const dragOrigin = useRef<number | null>(null)
@@ -30,7 +24,6 @@ export function CeuLiquido({ onNavigate }: CeuLiquidoProps) {
   const [lightbox, setLightbox] = useState(-1)
 
   const slides = CEU_SLIDES[piece]
-  const goHome = useCallback(() => onNavigate('home'), [onNavigate])
   const closeLightbox = useCallback(() => setLightbox(-1), [])
   const stepLightbox = useCallback((delta: number) => {
     setLightbox((current) => (current + delta + CEU_GALLERY.length) % CEU_GALLERY.length)
@@ -74,7 +67,6 @@ export function CeuLiquido({ onNavigate }: CeuLiquidoProps) {
           <feDisplacementMap in="SourceGraphic" in2="n" scale="22" xChannelSelector="R" yChannelSelector="G" />
         </filter>
       </svg>
-      <ProjectNav current="3d" onNavigate={onNavigate} />
       <main>
         <CeuAbertura />
         <CeuGiro
@@ -93,7 +85,7 @@ export function CeuLiquido({ onNavigate }: CeuLiquidoProps) {
         />
         <CeuVistas onOpen={setLightbox} />
         <CeuUniverso />
-        <CeuFicha onBack={goHome} />
+        <CeuFicha />
       </main>
       {lightbox >= 0 && <CeuLightbox index={lightbox} onClose={closeLightbox} onStep={stepLightbox} />}
     </div>

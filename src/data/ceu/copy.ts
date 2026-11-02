@@ -30,8 +30,6 @@ export const CEU_PAGE = {
   fichaEm: 'Líquido',
   fichaLede:
     'Uma coleção-cápsula pensada para existir primeiro no digital: duas peças acolchoadas que transformam o céu em superfície vestível.',
-  back: '← Voltar ao portfólio',
-  soon: 'Próximo projeto · em breve',
   wordmark: 'Céu Líquido',
   close: 'Fechar',
   lightbox: 'Vista ampliada',

@@ -1,14 +1,9 @@
 import { CEU_LILIES, CEU_MOUND, CEU_PANSY } from '../../data/ceu/assets'
 import { CEU_FICHA_CLOUD, CEU_GARDEN_DROP } from '../../data/ceu/layers'
 import { CEU_PAGE, CEU_TILES } from '../../data/ceu/copy'
-import { isPlainLeftClick, siteUrl } from '../../lib/links'
 import { CeuLayer } from './CeuLayer'
 
-type CeuFichaProps = {
-  onBack: () => void
-}
-
-export function CeuFicha({ onBack }: CeuFichaProps) {
+export function CeuFicha() {
   return (
     <section className="ficha" id="ficha" data-par aria-label="3D · Ficha">
       <CeuLayer layer={CEU_FICHA_CLOUD} />
@@ -33,23 +28,6 @@ export function CeuFicha({ onBack }: CeuFichaProps) {
             <div className="tile-v">{tile.value}</div>
           </li>
         ))}
-        <li className="tile lg t5 rv" data-reveal>
-          <a
-            className="cta"
-            href={siteUrl('home')}
-            onClick={(event) => {
-              if (!isPlainLeftClick(event)) return
-              event.preventDefault()
-              onBack()
-            }}
-          >
-            <span className="meta">{CEU_PAGE.back}</span>
-            <span className="cta-arrow" aria-hidden="true">
-              ↖
-            </span>
-          </a>
-          <span className="meta soon">{CEU_PAGE.soon}</span>
-        </li>
       </ul>
       <div className="garden">
         <div className="wordmark" aria-hidden="true">
