@@ -28,37 +28,20 @@ As portas são diferentes em cada um dos três repositórios para dar para rodar
 src/
   main.tsx, App.tsx     entrada e escolha da página
   components/
-    layout/             ProjectNav (barra fixa entre os projetos)
     sections/           CeuLiquido (página) e as seções: Abertura, Giro, Vistas, Universo, Ficha, Lightbox, Layer
   data/
     ceu/                conteúdo separado dos componentes:
                           types (tipos), assets (imagens), layers (camadas decorativas),
                           slides (peças e galeria), copy (textos)
-    projectNav.ts       itens da barra de projetos
   hooks/                useCeuScroll (parallax, reveal, giro por rolagem), useCarouselAutoplay,
-                        useGlassWarp, useBodyScrollLock, useHideOnScroll, useMobileReveal, mobile
-  lib/                  carousel (pose e constantes do giro), format, links (URLs entre os sites)
+                        useGlassWarp, useBodyScrollLock, useMobileReveal, mobile
+  lib/                  carousel (pose e constantes do giro), format
   styles/               index.css, mobile.css, ceu.css
   assets/ceu/           imagens usadas pelo Céu Líquido
 ```
 
 As imagens são carregadas por `import.meta.glob` em `src/data/ceu/assets.ts` e pedidas pelo nome do arquivo
 (`ceuAsset('ambiente/lirios.webp')`); um nome que não existe quebra o build/carregamento com erro explícito.
-
-## Links entre os sites
-
-Os links para a home e para os outros dois sites são URLs completas, definidas em `src/lib/links.ts`.
-Para apontar para os deploys novos, defina estas variáveis de ambiente (na Vercel: Project Settings → Environment Variables)
-e faça um novo build:
-
-| Variável | Site | Se não definir |
-| --- | --- | --- |
-| `VITE_URL_HOME` | Home | `https://nebulosa.art` |
-| `VITE_URL_3D` | 3D | `https://nebulosa.art/3d` |
-| `VITE_URL_COLAGEM` | Colagem | `https://nebulosa.art/colagem` |
-| `VITE_URL_MICANGA` | Micanga (Editorial) | `https://nebulosa.art/editorial` |
-
-O link para o próprio site é sempre `/`. Exemplo: `VITE_URL_3D=https://3d.nebulosa.art npm run build`.
 
 ## Deploy
 
