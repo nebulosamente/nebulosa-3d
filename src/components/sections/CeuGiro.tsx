@@ -5,7 +5,7 @@ import { CEU_GIRO_LAYERS } from '../../data/ceu/layers'
 import { CEU_SLIDES } from '../../data/ceu/slides'
 import { CEU_PAGE } from '../../data/ceu/copy'
 import { pad } from '../../lib/format'
-import { slidePose } from '../../hooks/useCeuScroll'
+import { slidePose } from '../../lib/carousel'
 import { CeuLayer } from './CeuLayer'
 
 type CeuGiroProps = {
